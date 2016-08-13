@@ -24,19 +24,22 @@ class somedata():
         path = os.path.join(path, 'source')
 
         for language in ('en', 'ko'):
-            with open(os.path.join(path, language, 'word.txt'), 'r', encoding='utf-8') as file:
-                values = file.read().split('\n')
+            with open(os.path.join(path, language, 'word.txt'), 'rb') as file:
+                values = file.read().decode('utf-8').split('\n')
+                values = [v.strip() for v in values if len(v) > 0]
                 setattr(self, '_data_word_' + language, values)
-            with open(os.path.join(path, language, 'name.txt'), 'r', encoding='utf-8') as file:
-                values = file.read().split('\n')
+            with open(os.path.join(path, language, 'name.txt'), 'rb') as file:
+                values = file.read().decode('utf-8').split('\n')
+                values = [v.strip() for v in values if len(v) > 0]
                 setattr(self, '_data_name_' + language, values)
 
-        with open(os.path.join(path, 'emailhost.txt'), 'r', encoding='utf-8') as file:
-            values = file.read().split('\n')
+        with open(os.path.join(path, 'emailhost.txt'), 'rb') as file:
+            values = file.read().decode('utf-8').split('\n')
+            values = [v.strip() for v in values if len(v) > 0]
             self._data_emailhost = values
 
-        with open(os.path.join(path, 'country.json'), 'r', encoding='utf-8') as file:
-            values = json.loads(file.read())
+        with open(os.path.join(path, 'country.json'), 'rb') as file:
+            values = json.loads(file.read().decode('utf-8'))
             self._data_country = values
 
     def bool(self, true_percentage=None):

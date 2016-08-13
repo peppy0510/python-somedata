@@ -13,6 +13,7 @@ pip uninstall somedata
 
 ```python
 from somedata import somedata
+some = somedata()
 ```
 
 ```python

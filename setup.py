@@ -15,7 +15,7 @@ except ImportError:
 
 setup(
     name='somedata',
-    version='0.1.0',
+    version='0.1.1',
     packages=['somedata'],
     package_data={
          'somedata': ['source/*.json', 'source/*.txt', 'source/en/*.txt', 'source/ko/*.txt'],
