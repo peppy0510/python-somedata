@@ -88,6 +88,6 @@ git clone http://muteklab.com:9000/root/python-somedata.git
 
 ## Reference
 
-[`chris1610/barnum-proj`](https://github.com/chris1610/barnum-proj/)
+[chris1610/barnum-proj](https://github.com/chris1610/barnum-proj/)
 
-[`English and European dictionaries *.txt downloads`](http://www.gwicks.net/dictionaries.htm)
+[English and European dictionaries *.txt downloads](http://www.gwicks.net/dictionaries.htm)
