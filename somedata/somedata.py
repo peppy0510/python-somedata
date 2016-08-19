@@ -208,8 +208,8 @@ class somedata():
     def image(self):
         return self.get_media_bin(self._image_path)
 
-    def avata(self):
-        return self.get_media_bin(self._avata_path)
+    def avatar(self):
+        return self.get_media_bin(self._avatar_path)
 
     def audio(self):
         return self.get_media_bin(self._audio_path)
