@@ -10,6 +10,7 @@ email: peppy0510@hotmail.com
 import os
 import re
 import json
+import base64
 import string
 import random
 import datetime
@@ -21,7 +22,7 @@ class somedata():
         self.choice = random.choice
 
         path = os.path.dirname(os.path.abspath(__file__))
-        path = os.path.join(path, 'source')
+        path = os.path.abspath(os.path.join(path, 'source'))
 
         for language in ('en', 'ko'):
             with open(os.path.join(path, language, 'word.txt'), 'rb') as file:
@@ -41,6 +42,9 @@ class somedata():
         with open(os.path.join(path, 'country.json'), 'rb') as file:
             values = json.loads(file.read().decode('utf-8'))
             self._data_country = values
+
+        for name in ('avatar', 'image', 'audio', 'video'):
+            self.set_media_path(name)
 
     def bool(self, true_percentage=None):
         '''
@@ -189,6 +193,29 @@ class somedata():
         started = started.strftime('%Y-%m-%d %H:%M:%S+0000')
         finished = finished.strftime('%Y-%m-%d %H:%M:%S+0000')
         return started, finished
+
+    def set_media_path(self, name):
+        path = os.path.dirname(os.path.abspath(__file__))
+        path = os.path.abspath(os.path.join(path, 'media', name))
+        paths = [os.path.join(path, v) for v in os.listdir(path)]
+        setattr(self, '_%s_path' % (name), paths)
+
+    def get_media_bin(self, paths):
+        path = os.path.abspath(self.choice(paths))
+        with open(path, 'rb') as file:
+            return base64.b64encode(file.read()).decode('utf-8')
+
+    def image(self):
+        return self.get_media_bin(self._image_path)
+
+    def avata(self):
+        return self.get_media_bin(self._avata_path)
+
+    def audio(self):
+        return self.get_media_bin(self._audio_path)
+
+    def video(self):
+        return self.get_media_bin(self._video_path)
 
 
 def trim_words(self, source, destination=None):

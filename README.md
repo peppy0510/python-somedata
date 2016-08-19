@@ -80,6 +80,17 @@ some.dates('1980-01-01', '2010-12-31', [60, 80])
 >>> ('2010-12-03 02:09:20+0000', '2011-02-21 02:09:20+0000')
 ```
 
+```python
+some.image()
+>>> 'base64 encoded image data'
+some.avatar()
+>>> 'base64 encoded avatar data'
+some.audio()
+>>> 'base64 encoded audio data'
+some.video()
+>>> 'base64 encoded video data'
+```
+
 ## Repository
 
 ```bash
