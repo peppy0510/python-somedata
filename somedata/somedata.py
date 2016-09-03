@@ -200,22 +200,24 @@ class somedata():
         paths = [os.path.join(path, v) for v in os.listdir(path)]
         setattr(self, '_%s_path' % (name), paths)
 
-    def get_media_bin(self, paths):
+    def get_media(self, paths, b64encode=True):
         path = os.path.abspath(self.choice(paths))
         with open(path, 'rb') as file:
-            return base64.b64encode(file.read()).decode('utf-8')
+            if b64encode:
+                return base64.b64encode(file.read()).decode('utf-8')
+            return file.read()
 
-    def image(self):
-        return self.get_media_bin(self._image_path)
+    def image(self, b64encode=True):
+        return self.get_media(self._image_path, b64encode=b64encode)
 
-    def avatar(self):
-        return self.get_media_bin(self._avatar_path)
+    def avatar(self, b64encode=True):
+        return self.get_media(self._avatar_path, b64encode=b64encode)
 
-    def audio(self):
-        return self.get_media_bin(self._audio_path)
+    def audio(self, b64encode=True):
+        return self.get_media(self._audio_path, b64encode=b64encode)
 
-    def video(self):
-        return self.get_media_bin(self._video_path)
+    def video(self, b64encode=True):
+        return self.get_media(self._video_path, b64encode=b64encode)
 
 
 def trim_words(self, source, destination=None):
