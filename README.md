@@ -83,12 +83,29 @@ some.dates('1980-01-01', '2010-12-31', [60, 80])
 ```python
 some.image()
 >>> 'base64 encoded image data'
+some.image(b64encode=False)
+>>> 'image file object'
+```
+
+```python
 some.avatar()
 >>> 'base64 encoded avatar data'
+some.avatar(b64encode=False)
+>>> 'avatar file object'
+```
+
+```python
 some.audio()
 >>> 'base64 encoded audio data'
+some.audio(b64encode=False)
+>>> 'audio file object'
+```
+
+```python
 some.video()
 >>> 'base64 encoded video data'
+some.video(b64encode=False)
+>>> 'video file object'
 ```
 
 ## Repository
