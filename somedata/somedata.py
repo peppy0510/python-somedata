@@ -202,10 +202,12 @@ class somedata():
 
     def get_media(self, paths, b64encode=True):
         path = os.path.abspath(self.choice(paths))
-        with open(path, 'rb') as file:
-            if b64encode:
+        if b64encode:
+            with open(path, 'rb') as file:
                 return base64.b64encode(file.read()).decode('utf-8')
-            return file.read()
+        else:
+            with open(path, 'rb') as file:
+                return file.read()
 
     def image(self, b64encode=True):
         return self.get_media(self._image_path, b64encode=b64encode)
