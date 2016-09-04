@@ -9,6 +9,7 @@ email: peppy0510@hotmail.com
 
 import os
 import re
+import io
 import json
 import base64
 import string
@@ -207,7 +208,7 @@ class somedata():
                 return base64.b64encode(file.read()).decode('utf-8')
         else:
             with open(path, 'rb') as file:
-                return file
+                return io.BytesIO(file)
 
     def image(self, b64encode=True):
         return self.get_media(self._image_path, b64encode=b64encode)
