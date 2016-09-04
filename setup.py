@@ -15,7 +15,7 @@ except ImportError:
 
 setup(
     name='somedata',
-    version='0.1.10',
+    version='0.1.11',
     packages=['somedata'],
     package_data={
          'somedata': ['source/*', 'source/*/*', 'media/*', 'media/*/*'],
