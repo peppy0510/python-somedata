@@ -2,7 +2,7 @@
 ## Installation
 
 ```bash
-pip install git+http://muteklab.com:9000/root/python-somedata.git
+pip install git+http://east-control.com:9000/pockestra/python-somedata.git
 ```
 
 ```bash
@@ -111,7 +111,7 @@ some.video(b64encode=False)
 ## Repository
 
 ```bash
-git clone http://muteklab.com:9000/root/python-somedata.git
+git clone http://east-control.com:9000/pockestra/python-somedata.git
 ```
 
 ## Reference
