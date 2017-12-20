@@ -2,7 +2,7 @@
 ## Installation
 
 ```bash
-pip install git+http://east-control.com:9000/pockestra/python-somedata.git
+pip install git+http://east-control.com:3000/pockestra/python-somedata.git
 ```
 
 ```bash
