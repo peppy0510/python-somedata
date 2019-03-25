@@ -2,7 +2,7 @@
 ## Installation
 
 ```bash
-pip install git+http://east-control.com:3000/pockestra/python-somedata.git
+pip install git+ssh://git@github.com/peppy0510/python-somedata.git
 ```
 
 ```bash
@@ -111,7 +111,7 @@ some.video(b64encode=False)
 ## Repository
 
 ```bash
-git clone http://east-control.com:9000/pockestra/python-somedata.git
+git clone git@github.com:peppy0510/python-somedata.git
 ```
 
 ## Reference
