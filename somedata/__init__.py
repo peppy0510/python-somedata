@@ -9,5 +9,5 @@ email: peppy0510@hotmail.com
 
 try:
     from .somedata import somedata
-except:
-    from somedata import somedata
+except Exception:
+    from somedata import somedata  # noqa

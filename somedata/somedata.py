@@ -7,14 +7,14 @@ email: peppy0510@hotmail.com
 '''
 
 
-import os
-import re
+import base64
+import datetime
 import io
 import json
-import base64
-import string
+import os
 import random
-import datetime
+import re
+import string
 
 
 class somedata():
@@ -156,6 +156,17 @@ class somedata():
         '''
         return self.choice([v['Name'] for v in self._data_country])
 
+    def ip_address(self, ip_base=None):
+        '''
+        아이피주소를 랜덤으로 반환.
+        '''
+        ip_base_parts = (ip_base or '').split('.')
+        ip_base_parts = [v for v in ip_base_parts if v]
+        value = '{}.{}.{}.{}'.format(
+            *ip_base_parts,
+            *[self.choice(range(1, 255)) for _ in range(4 - len(ip_base_parts))])
+        return value
+
     def date(self, start, end):
         '''
         두 날짜 사이의 날짜시간을 랜덤으로 반환.
@@ -281,6 +292,14 @@ def __test__():
     print('some.country_code()'.ljust(pad), some.country_code())
 
     print('some.country_name()'.ljust(pad), some.country_name())
+
+    print('some.ip_address()'.ljust(pad), some.ip_address())
+
+    print('some.ip_address(192)'.ljust(pad), some.ip_address('192'))
+
+    print('some.ip_address(192.168)'.ljust(pad), some.ip_address('192.168'))
+
+    print('some.ip_address(192.168.0)'.ljust(pad), some.ip_address('192.168.0'))
 
     print('some.serial(16)'.ljust(pad), some.serial(16))
 
