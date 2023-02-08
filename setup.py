@@ -22,6 +22,6 @@ setup(
     },
     author='Taehong Kim',
     author_email='peppy0510@hotmail.com',
-    description='',
+    description='python-somedata',
     long_description='',
 )
